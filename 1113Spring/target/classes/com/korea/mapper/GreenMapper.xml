@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.korea.mapper.GreenMapper">
+	<select id="getGreen" resultType="com.korea.domain.GreenVO">
+		select * from tbl_green
+	</select>
+	<select id="getOne" resultType="com.korea.domain.GreenVO">
+		select * from tbl_green where gid = #{gid}
+	</select>
+	<update id="update">
+		update tbl_green set korea=#{korea}, math=#{math} where gid = #{gid}
+	</update>
+	<insert id="repeat">
+		insert into merged values (seq_green.nextval, #{merged})
+	</insert>
+	<select id="getMerges" resultType="com.korea.domain.MergeVO">
+		select * from merged
+	</select>
+</mapper>
